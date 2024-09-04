@@ -1,5 +1,4 @@
 import SalesGrid from './components/grid/sales-grid'
-import { MOCK_DATA } from './data'
 import { useGetTodaySalesQuery } from './hooks/api/sales'
 import { Card, CardHeader, CardTitle, CardContent } from './components/ui/card'
 import ProductsBarChart from './components/graphs/products-bar-graph'
