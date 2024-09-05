@@ -1,3 +1,53 @@
+# [infytrix Assignment](https://sanchit-infytrix-assignment.netlify.app/)
+
+Sales DashBoard Application
+
+[![infytrix Assignment](./public/prod.png)](https://sanchit-infytrix-assignment.netlify.app/)
+
+
+## Tech Stack
+
+- Typescript
+- React.js
+- Tailwind CSS
+- Shadcn
+- React Query
+- Axios
+- AG Grid
+- Chart js
+
+## Getting Started
+
+Make .env.local but using .env.sample
+
+First Install dependencies. Run the following command:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

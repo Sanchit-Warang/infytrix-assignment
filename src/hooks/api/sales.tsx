@@ -25,7 +25,7 @@ export const useGetTodaySalesQuery = () => {
 
 export const useGetSalesBYDateQuery = (date: Date) => {
   return useQuery({
-    queryKey: ['sales', date.toISOString()],
+    queryKey: ['sales', date.toLocaleDateString()],
     queryFn: async () => {
       const { data } = await AXIOS.get('/sales')
       const res = data as Sales[]

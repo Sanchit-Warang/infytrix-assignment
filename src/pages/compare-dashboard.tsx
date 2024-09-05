@@ -130,7 +130,7 @@ const CompareDashBoardPage = () => {
 
   return (
     <main className="space-y-4 w-full">
-      <h1 className="text-2xl font-semibold">Today's Sales</h1>
+      <h1 className="text-2xl font-semibold">Compare Sales</h1>
       <Card className="w-full">
         <CardHeader>
           <CardTitle>Pick Dates</CardTitle>
