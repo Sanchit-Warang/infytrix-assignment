@@ -47,11 +47,12 @@ const ProductsBarChart = ({ data }: ProductsBarChartProps) => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     indexAxis: 'y' as const,
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-full h-[30vh] md:h-[50vh]'>
       <Bar data={chartData} options={options} />
     </div>
   )

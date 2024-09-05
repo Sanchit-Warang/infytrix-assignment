@@ -99,6 +99,7 @@ const SalesChart = ({
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top' as const,
@@ -110,7 +111,7 @@ const SalesChart = ({
     },
   }
   return (
-    <div className='md:w-3/4 w-full'>
+    <div className='md:w-3/4 h-[40vh] md:h-[60vh] w-full'>
       <Line options={options} data={chartData} />
     </div>
   )
