@@ -52,7 +52,7 @@ const ProductsBarChart = ({ data }: ProductsBarChartProps) => {
   }
 
   return (
-    <div className='w-full h-[30vh] md:h-[50vh]'>
+    <div className="w-full h-[30vh] md:h-[50vh]">
       <Bar data={chartData} options={options} />
     </div>
   )

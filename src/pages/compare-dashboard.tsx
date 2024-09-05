@@ -15,6 +15,8 @@ import CategoriesPieChart from '@/components/graphs/categories-piechart-graph'
 import { useGetSalesBYDateQuery } from '@/hooks/api/sales'
 import ProductsBarChart from '@/components/graphs/products-bar-graph'
 import TodaysProductsLine from '@/components/todays-product-with-selector'
+import SalesDiffGrid from '@/components/grid/sales-diffrence-grid'
+import Loader from '@/components/ui/loader'
 
 const CompareDashBoardPage = () => {
   const [date1, setDate1] = useState<Date | undefined>(new Date())
@@ -99,8 +101,36 @@ const CompareDashBoardPage = () => {
     return <></>
   }
 
+  const salesJSX = () => {
+    if (sale1.data && sale2.data) {
+      const data = sale1.data.map((item, i) => {
+        return {
+          id: item.id,
+          productName: item.productName,
+          category: item.category,
+          sale1: item.sales,
+          sale2: sale2.data[i].sales,
+          difference: Math.abs(item.sales - sale2.data[i].sales),
+          time: item.time,
+        }
+      })
+      return (
+        <>
+          <h1 className="text-xl font-semibold">Sales Difference</h1>
+          <Card className="p-3">
+            <CardContent className="overflow-x-auto">
+              <SalesDiffGrid className="h-[50vh]" rowData={data} />
+            </CardContent>
+          </Card>
+        </>
+      )
+    }
+    return <></>
+  }
+
   return (
     <main className="space-y-4 w-full">
+      <h1 className="text-2xl font-semibold">Today's Sales</h1>
       <Card className="w-full">
         <CardHeader>
           <CardTitle>Pick Dates</CardTitle>
@@ -168,6 +198,8 @@ const CompareDashBoardPage = () => {
           </div>
         </CardContent>
       </Card>
+      {sale1.isLoading || sale2.isLoading ? <Loader /> : <></>}
+      {salesJSX()}
       {categoriesJSX()}
       {productsJSX()}
       {productLinesJSX()}

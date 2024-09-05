@@ -100,6 +100,20 @@ const SalesChart = ({
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'hours', // X-axis label
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'sales', // Y-axis label
+        },
+      },
+    },
     plugins: {
       legend: {
         position: 'top' as const,
@@ -111,7 +125,7 @@ const SalesChart = ({
     },
   }
   return (
-    <div className='md:w-3/4 h-[40vh] md:h-[60vh] w-full'>
+    <div className="md:w-3/4 h-[40vh] md:h-[60vh] w-full">
       <Line options={options} data={chartData} />
     </div>
   )

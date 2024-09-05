@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ThemeProvider } from '@/components/theme-provider'
 export type ProvidersProps = {
   children: React.ReactNode
 }
@@ -11,7 +12,9 @@ const Providers = ({ children }: ProvidersProps) => {
     <>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools />
-        {children}
+        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+          {children}
+        </ThemeProvider>
       </QueryClientProvider>
     </>
   )

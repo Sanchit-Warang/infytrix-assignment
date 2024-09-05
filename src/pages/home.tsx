@@ -4,17 +4,21 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import ProductsBarChart from '@/components/graphs/products-bar-graph'
 import CategoriesPieChart from '@/components/graphs/categories-piechart-graph'
 import TodaysProductsLine from '@/components/todays-product-with-selector'
+import Loader from '@/components/ui/loader'
 
 function HomePage() {
   const todaySales = useGetTodaySalesQuery()
+
   return (
     <main className="space-y-4 w-full">
+      <h1 className="text-2xl font-semibold">Today's Sales</h1>
+      {todaySales.isLoading && <Loader />}
       {todaySales.data && (
         <Card className="w-full">
           <CardHeader>
             <CardTitle>Today's Sales</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className='overflow-x-auto'>
             <SalesGrid className="h-[50vh] " rowData={todaySales.data} />
           </CardContent>
         </Card>
@@ -41,7 +45,7 @@ function HomePage() {
             <CardHeader>
               <CardTitle>Product Sales throughout the day</CardTitle>
             </CardHeader>
-            <CardContent className='overflow-x-auto'>
+            <CardContent className="overflow-x-auto">
               <TodaysProductsLine data={todaySales.data} />
             </CardContent>
           </Card>

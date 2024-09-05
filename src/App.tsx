@@ -1,11 +1,13 @@
-import CompareDashBoardPage from './pages/compare-dashboard'
-import HomePage from './pages/home'
+import Navbar from './components/navbar'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
     <>
-      <HomePage />
-      <CompareDashBoardPage/>
+      <Navbar />
+      <div className="m-10">
+        <Outlet />
+      </div>
     </>
   )
 }
