@@ -30,7 +30,7 @@ const SalesGrid = ({ rowData = [], className, ...props }: SalesGridProps) => {
     <div {...props} className={cn('ag-theme-quartz w-full', className)}>
       <AgGridReact
         pagination
-        paginationPageSize={500}
+        paginationPageSize={10}
         rowData={rowData}
         columnDefs={colDefs}
       />

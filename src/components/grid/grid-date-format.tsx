@@ -1,7 +1,7 @@
 import { CustomCellRendererProps } from 'ag-grid-react'
 
 const GridDateFormat = (props: CustomCellRendererProps) => {
-  return <span>{`${new Date(props.value).getTime()}`}</span>
+  return <span>{`${new Date(props.value).toLocaleTimeString()}`}</span>
 }
 
 export const DateComparator = (valueA: string, valueB: string) => {

@@ -50,7 +50,11 @@ const ProductsBarChart = ({ data }: ProductsBarChartProps) => {
     indexAxis: 'y' as const,
   }
 
-  return <Bar data={chartData} options={options} />
+  return (
+    <div className='w-full'>
+      <Bar data={chartData} options={options} />
+    </div>
+  )
 }
 
 export default ProductsBarChart

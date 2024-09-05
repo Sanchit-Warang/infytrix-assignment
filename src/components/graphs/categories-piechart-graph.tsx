@@ -28,7 +28,7 @@ const CategoriesPieChart = ({ data }: CategoriesPieChartProps) => {
     labels: aggregatedData.map((product) => product.category),
     datasets: [
       {
-        label: 'Category',
+        label: 'Sales',
         data: aggregatedData.map((product) => {
           return (product.sales / totalSales) * 360
         }),
