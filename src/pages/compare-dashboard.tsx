@@ -139,7 +139,7 @@ const CompareDashBoardPage = () => {
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="flex justify-center flex-col items-center space-y-3">
               <h1 className="text-lg font-semibold">
-                Day {date1?.toLocaleDateString()}
+                Day 1
               </h1>
               <>
                 <Popover>
@@ -168,7 +168,7 @@ const CompareDashBoardPage = () => {
             </div>
             <div className="flex justify-center flex-col items-center space-y-3">
               <h1 className="text-lg font-semibold">
-                Day {date2?.toLocaleDateString()}
+                Day 2
               </h1>
               <>
                 <Popover>

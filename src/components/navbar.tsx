@@ -11,7 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   return (
-    <nav className="sticky top-0 w-full h-[7vh] bg-primary flex justify-between items-center z-[100] px-10">
+    <nav className="sticky top-0 w-full h-[7vh] bg-primary flex justify-between items-center z-[100] px-10 shadow-lg">
       <div></div>
       <NavigationMenu>
         <NavigationMenuList className="gap-5">

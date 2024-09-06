@@ -14,7 +14,6 @@ export type SalesGridProps = {
 
 const SalesGrid = ({ rowData = [], className, ...props }: SalesGridProps) => {
   const [colDefs] = useState<ColDef<Sales>[]>([
-    { field: 'id', flex: 1 },
     { field: 'productName', filter: true, flex: 1 },
     { field: 'category', filter: true, flex: 1 },
     { field: 'sales', flex: 1 },
